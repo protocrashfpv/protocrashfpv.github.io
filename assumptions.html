@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Maximise your FPV range</title>
+<link rel="stylesheet" type="text/css" href="./style/assstyle.css"/>
+</head>
+<body>
+<span class="bg" style="background-image: url(images/background.jpg);"></span>
+<div class="textcontainer">
+	<h1>
+		Main assumptions used
+	</h1>
+	<h2>
+		<ul>
+			<li>Perfect noise floor (i.e. noise floor below receiver's sensitivity</li>
+			<li>Perfect line of sight between the Tx and Rx (i.e. zero obstructions in the frenzel zone)</li>
+			<li>For linear polarised antennas, both antennas are perfectly oriented to avoid all polarisation mismatch</li>
+			<li>When using a linear and a circular polarised antenna, the loss is 3db</li>
+			<li>All transmitters emit exactly their stated power</li>
+			<li>Range calculations use the standard link margin calculations</li>
+		</ul>
+		<br>
+		<ul>
+		<li>Additionally, gain values for different antennas were taken from manufacturer published information, as follows:</li>
+		</ul>	
+		<br><br>
+		<table width="600">
+			<tr>
+			  <td>Rubber ducky</td>
+			  <td>3db</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>Cloverleaf</td>
+			  <td>1.25db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Skew planar</td>
+			  <td>0.92db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Fan</td>
+			  <td>0.9db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Sky hammer</td>
+			  <td>4.25db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Mad mushroom</td>
+			  <td>1.5db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Windmill</td>
+			  <td>1.3db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Moxon</td>
+			  <td>5.75</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>Crosshair</td>
+			  <td>10db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Patch</td>
+			  <td>8db, 11db and 14db</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>Patch</td>
+			  <td>8db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Pepperbox</td>
+			  <td>11db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Helical 3, 5, 10 and 16 turns</td>
+			  <td>7db, 9.5db, 12.5db and 15.5db</td> 
+			  <td>circular</td>
+			</tr>
+			<tr>
+			  <td>Yagi</td>
+			  <td>16.5db</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>Inverted V</td>
+			  <td>1.75db</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>1/2wave dipole</td>
+			  <td>2.15</td> 
+			  <td>linear</td>
+			</tr>
+			<tr>
+			  <td>Turnstyle</td>
+			  <td>2.2db</td> 
+			  <td>linear</td>
+			</tr>
+			
+		</table>
+	</h2>
+</div>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50899938-1', 'maxmyrange.com');
+  ga('send', 'pageview');
+
+</script>
+</html>
