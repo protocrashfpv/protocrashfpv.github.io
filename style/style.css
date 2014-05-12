@@ -11,13 +11,6 @@ body{
 #preload-03 { background: url(../images/lab.jpg) no-repeat -9999px -9999px; }
 #preload-04 { background: url(../images/qmark-selected.jpg) no-repeat -9999px -9999px; }
 
-/*
-Blue: #9CB7DE
-Grey: D7D7D7
-White: FFFFFF
-the lab and guide appear after a short while and the text
-sources are blurred until you hover
-*/
 
 .choosesetup{
 	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
@@ -27,13 +20,6 @@ sources are blurred until you hover
 	margin-bottom:2%;
 	font-weight:bold;
 }
-/* THoughts
-- default selection things are grey or something
-- change color of button on hover
-- when user makes a selection on the combo box change the text color so that they know what theyve chosen and what not
-- need icon for tab
-- need icon for about
-*/
 
 /* Set the colour when a dropdown is in focus*/
 select:focus {

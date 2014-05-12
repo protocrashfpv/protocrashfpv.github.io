@@ -1,10 +1,4 @@
-﻿//TODO
-//publish https://pages.github.com/
-//test analytics
-//point godaddy
-//IE dropdowns look crap
-
-function buttonClick()
+﻿function buttonClick()
 {
 	if (document.getElementById('theButton').classList.contains('button')) {
 		var frequency = parseFloat(document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value);
@@ -46,7 +40,7 @@ function dropSelect()
 		document.getElementById('theButton').classList.add('button'); 
 		document.getElementById('buttonHolder').classList.add('positionbutton');	
 		document.getElementById('buttonHolder').classList.remove('hidden');	
-		//document.getElementById('theButton').classList.remove('disabledButton'); 
+		
 	}	
 }
 
@@ -58,10 +52,7 @@ function infoClick()
 
 function buttonHover()
 {
-//document.getElementById('theButton').classList.remove('disabledButton'); 
-//document.getElementById('theButton').className = 'button_hover';
-//document.getElementById('theButton').classList.add('button_hover');
-//document.getElementById('theButton').classList.remove('disabledButton');
+
 }
 function buttonOut()
 {
