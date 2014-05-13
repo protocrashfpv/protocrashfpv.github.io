@@ -5,11 +5,19 @@
 <title>Maximise your FPV range</title>
 <link rel="stylesheet" type="text/css" href="./style/style.css"/>
 <SCRIPT LANGUAGE="JavaScript" SRC="myscript.js"> </SCRIPT>
-<script async="" src="//www.google-analytics.com/analytics.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50899938-1', 'maxmyrange.com');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
 <span class="bg" style="background-image: url(images/background.jpg);"></span>
-<div class="preload"></div>
 <div id="qmark" onclick="infoClick()"></div>
 
 <div style="clear: right" class="centreselectors">
@@ -92,16 +100,24 @@ Thats as long as 75 snakes in a row.
 <a href="http://www.lulu.com/shop/alex-protogerellis/the-beginners-guide-to-fpv-bw/paperback/product-21532701.html" target="_blank"><img class="images" src="images/guide.jpg" alt="The beginner's guide to FPV" width="300" height="400"></a>
 </div>
 		</div>
+		
+<div class="hidden">
+	<script type="text/javascript">
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"images/button-selected.png",
+				"images/guide.png",
+				"images/qmark-selected.png",
+				"images/lab.png"
+			)
+	</script>
+</div>
 
 		</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-50899938-1', 'maxmyrange.com');
-  ga('send', 'pageview');
-
-</script>
 </html>

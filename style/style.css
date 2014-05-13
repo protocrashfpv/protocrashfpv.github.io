@@ -6,15 +6,6 @@ body{
 	background-color: rgba(22,60,73,10);
 }
 
-.preload {
-    background-image: url(../images/button-selected.png),
-                      url(../images/guide.png),
-                      url(../images/lab.png),
-                      url(../images/qmark-selected.png),
-    background-position: -9999px -9999px;
-    background-repeat: no-repeat;
-}
-
 .choosesetup{
 	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
 	color: #FFFFFF; /*Font color*/
@@ -98,7 +89,7 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 .images:hover
 {
 		opacity:1.0;
-		filter:alpha(opacity=100); 
+		filter:alpha(opacity=100);
 }
 
 #qmark {
