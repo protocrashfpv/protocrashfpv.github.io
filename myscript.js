@@ -164,3 +164,13 @@ function superRound(value, exp) {
   value = value.toString().split('e');
   return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
 }
+
+function labClick()
+{
+ga('send', 'event', 'lablink', 'click');
+}
+
+function guideClick()
+{
+ga('send', 'event', 'guidelink', 'click');
+}
