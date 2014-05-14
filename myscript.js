@@ -19,7 +19,7 @@
 		document.getElementById('andnow').className = 'andnow';
 		document.getElementById('sources').className = 'sources';
 		
-		var tweetlink = "https://twitter.com/share?text=I can FPV " + kmrange +"km away ("+document.getElementById('answerinfunny').innerHTML +"). Calculate your max range: www.maxmyrange.com";
+		var tweetlink = "https://twitter.com/share?text=I can FPV " + kmrange +"km away ("+document.getElementById('answerinfunny').innerHTML +"). Calculate your max range:";
 		document.getElementById('tweetlink').setAttribute('href', tweetlink);
 		document.getElementById('tweetlink').className = 'sharelink';
 		
