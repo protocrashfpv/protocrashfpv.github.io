@@ -35,6 +35,7 @@ function dropSelect()
 	document.getElementById('answerinfunny').className = 'hidden';
 	document.getElementById('andnow').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
+	document.getElementById('tweetlink').className = 'hidden';
 	
 	
 	var frequency = document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value;
