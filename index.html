@@ -19,7 +19,10 @@
 </head>
 <body>
 <span class="bg" style="background-image: url(images/background.jpg);"></span>
-<div id="qmark" onclick="infoClick()"></div>
+<div style="text-align:center" class="placeheader">
+	<div id="qmark" onclick="infoClick()"></div>
+	<a href="https://twitter.com/share?text=I can FPV xxxkm away (or ....). Calculate your max range:&amp;url=http://www.maxmyrange.com" class="hidden2" id="tweetlink" target="_blank" title="Share result on Twitter" onMouseOver="twitterMouseOn()" onMouseOut="twitterMouseOut()" onClick="twitterClick()">Share your range</a>
+</div>
 
 <div style="clear: right" class="centreselectors">
 	<div class="choosesetup">
@@ -115,6 +118,7 @@ Thats as long as 75 snakes in a row.
 				"images/button-selected.png",
 				"images/guide.jpg",
 				"images/qmark-selected.png",
+				"images/tweet.png",
 				"images/lab.jpg"
 			)
 	</script>

@@ -19,6 +19,10 @@
 		document.getElementById('andnow').className = 'andnow';
 		document.getElementById('sources').className = 'sources';
 		
+		var tweetlink = "https://twitter.com/share?text=I can FPV " + kmrange +"km away ("+document.getElementById('answerinfunny').innerHTML +"). Calculate your max range: http://www.maxmyrange.com";
+		document.getElementById('tweetlink').setAttribute('href', tweetlink);
+		document.getElementById('tweetlink').className = 'sharelink';
+		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
 		ga('send', 'event', 'letsfly', 'click');
@@ -52,13 +56,14 @@ function infoClick()
   win.focus();	
 }
 
-function buttonHover()
+function twitterMouseOn()
 {
-
+	document.getElementById('tweetlink').innerHTML = "Share &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp range";
 }
-function buttonOut()
-{
 
+function twitterMouseOut()
+{
+	document.getElementById('tweetlink').innerHTML = "Share your range";
 }
 
 function polarityMismatchLoss()
@@ -114,14 +119,14 @@ function getFunnyAnswer(kmrange)
 	}
 	if (answerType==3) { //Answers relating to speed/time
 		var subAnswerType = randomNum(1,8);
-		if (subAnswerType==1) return "That how far a man being chased by a bear runs in " + rangeInTimeMins(kmrange,20) + " minutes";
-		if (subAnswerType==2) return "That how far a Porsche 944 drives in " + rangeInTimeMins(kmrange,200) + " minutes";
-		if (subAnswerType==3) return "That just " + rangeInTimeSecs(kmrange,1224) + " seconds at the speed of sound";
-		if (subAnswerType==4) return "That just " + rangeInTimeSecs(kmrange,2448) + " seconds at the speed of love";
-		if (subAnswerType==5) return "That how far an F16 flies in " + rangeInTimeSecs(kmrange,3060) + " seconds";
-		if (subAnswerType==6) return "That how far a cheetah runs in " + rangeInTimeMins(kmrange,120) + " minutes";
-		if (subAnswerType==7) return "That how far a pigeon flies in " + rangeInTimeMins(kmrange,80) + " minutes";
-		if (subAnswerType==8) return "That how far Usain Bolt sprints in " + rangeInTimeMins(kmrange,36) + " minutes";
+		if (subAnswerType==1) return "That's how far a man being chased by a bear runs in " + rangeInTimeMins(kmrange,20) + " minutes";
+		if (subAnswerType==2) return "That's how far a Porsche 944 drives in " + rangeInTimeMins(kmrange,200) + " minutes";
+		if (subAnswerType==3) return "That's just " + rangeInTimeSecs(kmrange,1224) + " seconds at the speed of sound";
+		if (subAnswerType==4) return "That's just " + rangeInTimeSecs(kmrange,2448) + " seconds at the speed of love";
+		if (subAnswerType==5) return "That's how far an F16 flies in " + rangeInTimeSecs(kmrange,3060) + " seconds";
+		if (subAnswerType==6) return "That's how far a cheetah runs in " + rangeInTimeMins(kmrange,120) + " minutes";
+		if (subAnswerType==7) return "That's how far a pigeon flies in " + rangeInTimeMins(kmrange,80) + " minutes";
+		if (subAnswerType==8) return "That's how far Usain Bolt sprints in " + rangeInTimeMins(kmrange,36) + " minutes";
 	}
 }
 
@@ -173,4 +178,8 @@ ga('send', 'event', 'lablink', 'click');
 function guideClick()
 {
 ga('send', 'event', 'guidelink', 'click');
+}
+function twitterClick()
+{
+ga('send', 'event', 'tweet', 'click');
 }

@@ -6,6 +6,42 @@ body{
 	background-color: rgba(22,60,73,10);
 }
 
+.sharelink {
+position: block;	
+height: 53px;
+	margin-right: auto ;
+	margin-left: auto;
+	filter: alpha(opacity=80);
+  opacity: 0.8;
+	-webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.sharelink:hover {
+width: 66px;
+ height:53px;
+background-position:center;
+background-repeat: no-repeat; 
+ background-image: url('../images/tweet.png');
+ filter: alpha(opacity=100);
+  opacity: 1;
+ 
+}
+
+a {text-decoration:none; font-size: 2em; color:#1e90ff; font-weight:bold;font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;}      /* unvisited link */
+a:hover {color:#fff;}  /* mouse over link */
+
+
+.placeheader{
+/*width: 800px;*/
+margin-top: 30px; 
+ margin-left: auto ;
+  margin-right: auto ;
+ 
+}
+
 .choosesetup{
 	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
 	color: #FFFFFF; /*Font color*/
@@ -56,7 +92,7 @@ option {
 select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 
 .centreselectors{
-  margin-top: 5%;
+  margin-top: 2%;
   width: 1208px ; /*Change this to make it responsive*/
   margin-left: auto ;
   margin-right: auto ;
@@ -93,13 +129,12 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 }
 
 #qmark {
+/*display: absolute;*/
  width: 31px;
  height:31px;
  background-image: url('../images/qmark.png');
-margin-top: 30px;
 margin-right: 30px ;
 margin-left: auto;
-
 }
 #qmark:hover {
  background-image: url('../images/qmark-selected.png');
@@ -147,9 +182,9 @@ margin-left: auto;
 	margin-top: 4%;
 			opacity:0;
 		filter:alpha(opacity=0); /* For IE8 and earlier */;
-  -webkit-animation: fadeIn 4s; /* Chrome, Safari, Opera */
+  -webkit-animation: fadeIn 8s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
-  animation: fadeIn 4s;
+  animation: fadeIn 8s;
   animation-fill-mode: forwards;  
 }
 .answerkm{
@@ -198,6 +233,13 @@ font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,s
 		opacity:1.0;
 		filter:alpha(opacity=100); /* For IE8 and earlier */;
 	}
+}
+
+.hidden2 {
+
+    visibility: hidden;
+		opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
 }
 	
 .hidden {
