@@ -20,6 +20,8 @@
 		document.getElementById('sources').className = 'sources';
 		
 		document.getElementById('buttonHolder').className = 'hidden';
+		
+		ga('send', 'event', 'letsfly', 'click');
 	}
 }
 
