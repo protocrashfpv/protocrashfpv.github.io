@@ -235,7 +235,13 @@ font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,s
 	}
 }
 
+.hidden2 {
 
+    visibility: hidden;
+		opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
+}
+	
 .hidden {
 display: none;
     visibility: hidden;
