@@ -25,7 +25,7 @@
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
-		galabel = frequency + ';' + txpower + ';' + parseFloat(document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + parseFloat(document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text);
+		galabel = frequency + ';' + txpower + ';' + txantenna + ';' + rxantenna;
 		ga('send', 'event', 'letsfly', 'click', galabel);
 	}
 }
