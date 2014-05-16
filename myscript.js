@@ -25,7 +25,8 @@
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
-		ga('send', 'event', 'letsfly', 'click');
+		galabel = frequency + ';' + txpower + ';' + txantenna + ';' + rxantenna;
+		ga('send', 'event', 'letsfly', 'click', galabel);
 	}
 }
 
