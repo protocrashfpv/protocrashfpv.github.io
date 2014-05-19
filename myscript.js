@@ -1,6 +1,8 @@
 ﻿function buttonClick()
 {
 	if (document.getElementById('theButton').classList.contains('button')) {
+		counter = counter+1;
+		
 		var frequency = parseFloat(document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value);
 		var txpower = parseFloat(document.getElementById("txPowerChoice").options[document.getElementById("txPowerChoice").selectedIndex].value);
 		var txantenna = parseFloat(document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].value);
@@ -25,7 +27,7 @@
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
-		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text;
+		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
 	}
 }
