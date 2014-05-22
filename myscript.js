@@ -77,13 +77,13 @@ function polarityMismatchLoss()
 	
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Rubber ducky") txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Moxon") txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Inverted V") rxPolarity="linear";
 	
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Rubber ducky") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (8dbi linear)") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (11dbi linear)") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (14dbi linear)") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Yagi (16.5dbi)") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Inverted V") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="1/2wave dipole") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Turnstyle") rxPolarity="linear";
 	
