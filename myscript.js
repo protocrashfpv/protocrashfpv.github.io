@@ -78,6 +78,7 @@ function polarityMismatchLoss()
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Rubber ducky") txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Moxon") txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Inverted V") rxPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Diamond SRH771") rxPolarity="linear";
 	
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Rubber ducky") rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (8dbi linear)") rxPolarity="linear";
