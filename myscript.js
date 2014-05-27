@@ -29,6 +29,8 @@
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
+		
+		_kmq.push(['record', 'LetsFlyButton', {'Settings':galabel}]);
 	}
 }
 
@@ -178,13 +180,16 @@ function superRound(value, exp) {
 function labClick()
 {
 ga('send', 'event', 'lablink', 'click');
+_kmq.push(['record', 'Lablink']);
 }
 
 function guideClick()
 {
 ga('send', 'event', 'guidelink', 'click');
+_kmq.push(['record', 'Guidelink',]);
 }
 function twitterClick()
 {
 ga('send', 'event', 'tweet', 'click');
+_kmq.push(['record', 'Twitterlink']);
 }
