@@ -5,7 +5,7 @@
 <meta name="description" content="Calculate your FPV range">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="./style/style.css"/>
-<SCRIPT LANGUAGE="JavaScript" SRC="myscript.js"> </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="advanced.js"> </SCRIPT>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,7 +16,7 @@
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
 
-  var counter=0;
+  var advCounter=0;
 </script>
 <script type="text/javascript">var _kmq = _kmq || [];
 var _kmk = _kmk || 'eb12bac4a811066b2b86ca08736859c2d032ccca';
@@ -62,89 +62,33 @@ var WRInitTime=(new Date()).getTime();
 <div style="clear: right" class="centreselectors">
 	<div class="choosesetup">
 		Pick your setup
-				<div class="choosesetupmode">
-		 (or go 
-		 <a href="./advanced.html" class="underline" title="Return to normal mode">advanced</a>
+		<div class="choosesetupmode">
+		 (or back to 
+		 <a href="./index.html" class="underline" title="Return to normal mode">normal mode</a>
 		 )
 		</div>
 	</div>
+	
+	<div class="inputcentre">
+		<form name="advForm" id="myForm">
+			<input type="number" name="advFreq" placeholder="Frequency (MHz)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" name="advPower" placeholder="Power (mw)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" name="advTxDb" placeholder="Tx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<br>
+			<input type="number" name="advRxDb" placeholder="Rx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" name="gainAdj" placeholder="Gain adjustment (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" name="advSensitivity" placeholder="Rx sensitivity (eg -85)" onchange="inputSelect()"> &nbsp&nbsp
+		</form>
+	</div>
+</div>
 
-		<select id="freqChoice" class="selectors" onchange="dropSelect()" autofocus>
-		  <option disabled selected value="unselected">Frequency</option>
-		  <option value=433>433MHz</option>
-		  <option value=900>900MHz</option>
-		  <option value=1300>1.2GHz</option>
-		  <option value=2400>2.4GHz</option>
-		  <option value=5800>5.8GHz</option>
+<div id="errorMsg" class="hidden">
+Ooops, something's wrong with your inputs. Here's an example of what works: <br>
+Frequency: 2400, Power: 200, Tx Gain 2.15, Rx Gain: 10, Gain adjustment: 0, Rx sensitivity: -85
+</div>
 
-		</select>
-		<select id="txPowerChoice" class="selectors" onchange="dropSelect()">
-		  <option disabled selected value="unselected">Tx Power</option>
-		  <option value=10>10mw</option>
-		  <option value=25>25mw</option>
-		  <option value=50>50mw</option>
-		  <option value=100>100mw</option>
-		  <option value=200>200mw</option>
-		  <option value=250>250mw</option>
-		  <option value=300>300mw</option>
-		  <option value=400>400mw</option>
-		  <option value=500>500mw</option>
-		  <option value=600>600mw</option>
-		  <option value=750>750mw</option>
-		  <option value=800>800mw</option>
-		  <option value=1000>1W</option>
-		  <option value=1500>1.5W</option>
-		</select>
-		<select class="selectors" id="txAntennaChoice" onchange="dropSelect()">
-		  <option disabled selected value="unselected">Tx Antenna</option>
-		  <option disabled value="header">Control (UHF)</option>
-		  <option value=2.15>&nbsp-&nbspDiamond SRH771</option>
-		  <option value=5.75>&nbsp-&nbspMoxon</option>
-				
-		  <option disabled value="header">Video</option>
-		  <option value=1.25>&nbsp-&nbspCloverleaf</option>
-		  <option value=0.9>&nbsp-&nbspFan</option>
-		  <option value=1.75>&nbsp-&nbspInverted V</option>
-		  <option value=1.5>&nbsp-&nbspMad mushroom</option>
-		  <option value=1>&nbsp-&nbspRubber ducky</option>
-		  <option value=0.92>&nbsp-&nbspSkew planar</option>
-		  <option value=4.25>&nbsp-&nbspSky hammer</option>
-		  <option value=1.3>&nbsp-&nbspWindmill</option>
-		</select>
-		<select class="selectors" id="rxAntennaChoice" onchange="dropSelect()">
-		  <option disabled selected value="unselected">Rx Antenna</option>
-		  <option disabled value="header">Control (UHF)</option>
-		  <option value=2.15>&nbsp-&nbsp1/2 wave dipole</option>
-		  <option value=1.75>&nbsp-&nbspInverted V</option>
-		  <option value=2.2>&nbsp-&nbspTurnstyle</option>
-		  <option disabled value="header">Video</option>
-		  <option value=2.15>&nbsp-&nbsp1/2 wave dipole</option>
-		  <option value=10>&nbsp-&nbspBiQuad</option>
-		  <option value=1.25>&nbsp-&nbspCloverleaf</option>
-		  <option value=10>&nbsp-&nbspCrosshair</option>
-		  <option value=0.9>&nbsp-&nbspFan</option>
-		  <option value=16>&nbsp-&nbspGatling</option>		  
-		  <option value=7>&nbsp-&nbspHelical (3t)</option>
-		  <option value=9.5>&nbsp-&nbspHelical (5t)</option>
-		  <option value=11.25>&nbsp-&nbspHelical (7t)</option>
-		  <option value=12.5>&nbsp-&nbspHelical (10t)</option>
-		  <option value=15.5>&nbsp-&nbspHelical (16t)</option>
-		  <option value=1.5>&nbsp-&nbspMad mushroom</option>
-		  <option value=8>&nbsp-&nbspPatch (8db linear)</option>
-		  <option value=11>&nbsp-&nbspPatch (11db linear)</option>
-		  <option value=14>&nbsp-&nbspPatch (14db linear)</option>
-		  <option value=8>&nbsp-&nbspPatch (8db CP)</option>
-		  <option value=11>&nbsp-&nbspPepperbox</option>
-		  <option value=1>&nbsp-&nbspRubber ducky</option>
-		  <option value=0.92>&nbsp-&nbspSkew planar</option>
-		  <option value=4.25>&nbsp-&nbspSky hammer</option>
-		  <option value=18>&nbsp-&nbspVulcan</option>		  
-		  <option value=1.3>&nbsp-&nbspWindmill</option>
-		  <option value=16.5>&nbsp-&nbspYagi (16.5db)</option>
-		</select>
-
-<div id="buttonHolder" class="positionbutton"> 		
-<div id="theButton" class="disabledButton" onclick="buttonClick()"></div>
+<div id="buttonHolder" class="positionadvbutton"> 		
+<div id="theButton" class="disabledButton" onclick="advButtonClick()"></div>
 
 </div>
 <br>

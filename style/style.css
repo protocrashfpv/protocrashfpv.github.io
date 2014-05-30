@@ -6,6 +6,33 @@ body{
 	background-color: rgba(22,60,73,10);
 }
 
+input {
+padding: 15px;
+     background-color: #1c4761;
+    margin: 0 0 10px 0;
+	text-align:center;
+		font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: #fff; /*Font color*/
+	font-size: 1em;
+
+}
+input:focus { 
+    background-color: #1e90ff; 
+} 
+
+form {
+width:770px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.inputcentre {
+
+width:800px;
+ margin-left: auto ;
+  margin-right: auto ;
+}
+
 .sharelink {
 position: block;	
 height: 53px;
@@ -51,6 +78,29 @@ margin-top: 30px;
 	font-weight:bold;
 }
 
+.choosesetupmode{
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: #FFFFFF; /*Font color*/
+	font-size: 1em;
+	text-align:center;
+	margin-bottom:2%;
+	font-weight:normal;
+}
+
+.underline{
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: #FFFFFF; /*Font color*/
+	font-size: 1em;
+	text-align:center;
+	margin-bottom:2%;
+	font-weight:normal;
+	text-decoration:underline;
+}
+.underline:hover{
+	color: #1e90ff; /*Font color*/
+}
+
+
 /* Set the colour when a dropdown is in focus*/
 select:focus {
 	color: #1e90ff;
@@ -60,8 +110,22 @@ option {
     /* Whatever color  you want */
      background-color: #1c4761;
 	 color: white;
-	 
 }
+
+.errorMsgClass{
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: red; /*Font color*/
+	font-size: 1.5em;
+	text-align:center;
+	margin-top: 0%;
+			opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
+  -webkit-animation: fadeIn 1s; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards;  
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;  
+}
+
 .selectors{
 	background-color: rgba(22,34,2,0.2);
    /*background: url(../images/arrow.png) no-repeat right rgba(0,0,0,0);*/
@@ -140,6 +204,20 @@ margin-left: auto;
  background-image: url('../images/qmark-selected.png');
 }
 
+.positionadvbutton{
+ width: 400px;
+  margin-top: 10%;
+  margin-left: auto ;
+  margin-right: auto ;
+		opacity:0;
+		filter:alpha(opacity=0); 
+
+
+  -webkit-animation: buttonAppear 1s; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards;  
+  animation: buttonAppear 1s;
+  animation-fill-mode: forwards;  
+}
 
 .positionbutton{
  width: 400px;
@@ -185,6 +263,19 @@ margin-left: auto;
   -webkit-animation: fadeIn 8s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 8s;
+  animation-fill-mode: forwards;  
+}
+.answerkmadv{
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: #FFFFFF; /*Font color*/
+	font-size: 3em;
+	text-align:center;
+	margin-top: 2%;
+			opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
+  -webkit-animation: fadeIn 1s; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards;  
+  animation: fadeIn 1s;
   animation-fill-mode: forwards;  
 }
 .answerkm{
