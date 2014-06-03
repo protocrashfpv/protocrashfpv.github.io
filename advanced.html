@@ -73,10 +73,10 @@ var WRInitTime=(new Date()).getTime();
 		<form name="advForm" id="myForm">
 			<input type="number" name="advFreq" placeholder="Frequency (MHz)" onchange="inputSelect()"> &nbsp&nbsp
 			<input type="number" name="advPower" placeholder="Power (mw)" onchange="inputSelect()"> &nbsp&nbsp
-			<input type="number" name="advTxDb" placeholder="Tx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" step="0.1" name="advTxDb" placeholder="Tx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
 			<br>
-			<input type="number" name="advRxDb" placeholder="Rx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
-			<input type="number" name="gainAdj" placeholder="Gain adjustment (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" step="0.1" name="advRxDb" placeholder="Rx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
+			<input type="number" step="0.1" name="gainAdj" placeholder="Gain adjustment (dB)" onchange="inputSelect()"> &nbsp&nbsp
 			<input type="number" name="advSensitivity" placeholder="Rx sensitivity (eg -85)" onchange="inputSelect()"> &nbsp&nbsp
 		</form>
 	</div>

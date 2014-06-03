@@ -7,11 +7,11 @@ body{
 }
 
 input {
-padding: 15px;
-     background-color: #1c4761;
-    margin: 0 0 10px 0;
+	padding: 15px;
+	background-color: #1c4761;
+	margin: 0 0 10px 0;
 	text-align:center;
-		font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
 	color: #fff; /*Font color*/
 	font-size: 1em;
 
@@ -21,9 +21,9 @@ input:focus {
 } 
 
 form {
-width:770px;
-margin-left:auto;
-margin-right:auto;
+	width:770px;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .inputcentre {
