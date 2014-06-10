@@ -29,8 +29,6 @@
 			document.getElementById('sources').className = 'sources';
 			
 			var tweetlink = "https://twitter.com/share?text=I can FPV " + kmrange +"km away ("+document.getElementById('answerinfunny').innerHTML +"). Calculate your max range:";
-			document.getElementById('tweetlink').setAttribute('href', tweetlink);
-			document.getElementById('tweetlink').className = 'sharelink';
 			
 			document.getElementById('buttonHolder').className = 'hidden';
 			
@@ -113,7 +111,6 @@ function inputSelect()
 	document.getElementById('answerinfunny').className = 'hidden';
 	document.getElementById('andnow').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
-	document.getElementById('tweetlink').className = 'hidden2';
 			
 	if ((advForm.advFreq.value!="")&&(advForm.advPower.value!="")&&(advForm.advTxDb.value!="")&&(advForm.advRxDb.value!="")&&(advForm.gainAdj.value!="")&&(advForm.advSensitivity.value!="")) {
 		document.getElementById('theButton').classList.add('button'); 
