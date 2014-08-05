@@ -18,6 +18,10 @@
 
   var advCounter=0;
 </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="highchart-dark-unica.js"></script>
+
 <link rel="shortcut icon" href="images/smallicon.ico">
 </head>
 <body>
@@ -63,14 +67,20 @@ Frequency: 2400, Power: 200, Tx Gain 2.15, Rx Gain: 10, Gain adjustment: 0, Rx s
 12.5 km (45 miles)
 </div>
 <div id="answerinfunny" class="hidden"><!------class="answerfunny">---->
-Thats as long as 75 snakes in a row.
+And now, a closer look at your data...
 </div>
-<div id="andnow" class="hidden"> <!---class="andnow">--->
-...and now, to read up on how to reach your max range safely...
+
+<div id="variableChoiceDiv" class="hidden">
+		<select id="variableChoice" class="selectors" onchange="variableSelect()" autofocus>
+		  <option selected value="Power">Power</option>
+		  <option value="Frequency">Frequency</option>
+		  <option value="Rx Gain">Rx Gain</option>
+		</select>
 </div>
-<div id="sources" class="hidden"><!---class="sources">--->
-<a href="http://www.fpvlab.com" target="_blank"><img onclick="labClick()" class="images" src="images/lab.jpg" alt="FPVLab" width="300" height="400"></a>
-<a href="http://www.amazon.com/The-beginners-guide-Fpv-amp/dp/1300820004" target="_blank"><img onclick="guideClick()" class="images" src="images/guide.jpg" alt="The beginner's guide to FPV" width="300" height="400"></a>
+</div>
+
+<div id="chart" class="hidden"><!---class="chart">--->
+<div id="container" class="chartStyle"></div>
 </div>
 		</div>
 		
@@ -87,7 +97,6 @@ Thats as long as 75 snakes in a row.
 				"images/button-selected.png",
 				"images/guide.jpg",
 				"images/qmark-selected.png",
-				"images/tweet.png",
 				"images/lab.jpg"
 			)
 	</script>

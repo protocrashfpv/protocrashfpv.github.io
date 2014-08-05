@@ -1,8 +1,128 @@
-﻿function advButtonClick()
+﻿var rangePoints;
+var xAxisLabels;
+var chartTitle;
+var xAxisTitle;
+
+function chart() { 
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: chartTitle
+        },
+        xAxis: {
+			title: {
+                text: xAxisTitle
+            },
+            categories: xAxisLabels
+        },
+        yAxis: {
+            title: {
+                text: 'Range (km)'
+            }
+        },
+        series: [{
+            name: 'Chosen setup',
+            data: rangePoints
+        }]
+    });
+};
+
+function variableSelect() {
+	var choice = document.getElementById("variableChoice").options[document.getElementById("variableChoice").selectedIndex].value;
+	var advFreq = parseFloat(advForm.advFreq.value);
+	var advTxDb = parseFloat(advForm.advTxDb.value);
+	var advRxDb = parseFloat(advForm.advRxDb.value);
+	var gainAdj = parseFloat(advForm.gainAdj.value);
+	var advSensitivity = parseFloat(advForm.advSensitivity.value);
+	var advPower = parseFloat(advForm.advPower.value);
+	
+	if (choice == 'Power') {
+
+	//Creating array of data points
+		rangePoints=[];
+		xAxisLabels=[];
+
+		rangePoints = [0]; 
+		xAxisLabels= [0];
+		chartTitle = 'Power/Range';
+		xAxisTitle = 'Power (mW)';
+		
+		for (i=100; i<2000; i=i+100) {
+			advPower = i;
+
+			var txpowerdb = 10*log10(advPower);
+			var fsl = -advSensitivity+advTxDb+txpowerdb+advRxDb+gainAdj;	
+			var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+			rangePoints[rangePoints.length] = kmrange;
+			xAxisLabels[xAxisLabels.length] = i;
+		}
+		chart(); 
+	}
+	else if (choice == 'Rx Gain') {
+
+	//Creating array of data points
+		rangePoints=[];
+		xAxisLabels=[];
+
+		chartTitle = 'Gain/Range';
+		xAxisTitle = 'Receiver Gain (dBi)';
+		
+		for (i=1; i<15; i=i+1) {
+			advRxDb=i;
+			var txpowerdb = 10*log10(advPower);
+			var fsl = -advSensitivity+advTxDb+txpowerdb+advRxDb+gainAdj;	
+			var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+			rangePoints[rangePoints.length] = kmrange;
+			xAxisLabels[xAxisLabels.length] = i;
+		}
+		chart(); 
+	}
+	else {
+		
+		chartTitle = 'Frequency/Range';
+		xAxisTitle = 'Frequency (mHz)';
+		var txpowerdb = 10*log10(advPower);
+		var fsl = -advSensitivity+advTxDb+txpowerdb+advRxDb+gainAdj;
+		
+		
+		rangePoints=[];
+		xAxisLabels=[];
+		
+		advFreq = 433;
+		var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+		rangePoints[0] = kmrange;
+		xAxisLabels[0] = 433;
+
+		advFreq = 900;
+		var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+		rangePoints[rangePoints.length] = kmrange;
+		xAxisLabels[xAxisLabels.length] = 900;
+
+		advFreq = 1300;
+		var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+		rangePoints[rangePoints.length] = kmrange;
+		xAxisLabels[xAxisLabels.length] = 1300;
+
+		advFreq = 2400;
+		var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+		rangePoints[rangePoints.length] = kmrange;
+		xAxisLabels[xAxisLabels.length] = 2400;
+
+		advFreq = 5800;
+		var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+		rangePoints[rangePoints.length] = kmrange;
+		xAxisLabels[xAxisLabels.length] = 5800;
+		
+		chart();
+	}
+}
+
+
+function advButtonClick()
 {
 	if (document.getElementById('theButton').classList.contains('button')) {
-
-
 		
 	var advFreq = parseFloat(advForm.advFreq.value);
 	var advPower = parseFloat(advForm.advPower.value);
@@ -17,26 +137,25 @@
 		var milerange = superRound(kmrange*0.6213,2);
 
 		if (isNumber(kmrange)) {
-		document.getElementById('errorMsg').className = "hidden"
+			document.getElementById('errorMsg').className = "hidden"
 			advCounter = advCounter+1;
 			
 			document.getElementById('answerinkm').innerHTML = kmrange + "km / " + milerange + "miles";
-			document.getElementById('answerinfunny').innerHTML = getFunnyAnswer(kmrange);
 			
 			document.getElementById('answerinkm').className = 'answerkmadv';
 			document.getElementById('answerinfunny').className = 'answerfunny';
-			document.getElementById('andnow').className = 'andnow';
-			document.getElementById('sources').className = 'sources';
-			
-			var tweetlink = "https://twitter.com/share?text=I can FPV " + kmrange +"km away ("+document.getElementById('answerinfunny').innerHTML +"). Calculate your max range:";
+			document.getElementById('variableChoiceDiv').className = 'centrevariableselect';
+			document.getElementById('chart').className = 'chart';
 			
 			document.getElementById('buttonHolder').className = 'hidden';
+			variableSelect();
 			
 			galabel = advFreq + ';' + advPower + ';' + advTxDb + ';' + advRxDb + ';' + gainAdj + ';' + advSensitivity+';'+advCounter;
 			ga('send', 'event', 'letsflyadvanced', 'click', galabel);
 			
 			_kmq.push(['record', 'LetsFlyButtonAdvanced', {'Settings':galabel}]);
-		} else {
+
+			} else {
 			document.getElementById('errorMsg').className = 'errorMsgClass';
 		}
 	}
@@ -72,45 +191,12 @@ function log10(x)
 	return Math.log(x) / Math.LN10;
 }
 
-function getFunnyAnswer(kmrange)
-{
-	var answerType = randomNum(1,3);
-	if (answerType==1) { //Answers relating to range
-		var subAnswerType = randomNum(1,5);
-		if (subAnswerType==1) return "Argh matey, that's " + convertRange(kmrange,89) + " the distance from skull cove to treasure island";
-		if (subAnswerType==2) return "That's " + convertRange(kmrange,384400) + " the distance from earth to the moon";
-		if (subAnswerType==3) return "That's " + convertRange(kmrange,1.6) + " the distance from the Champs Elysée to the Eiffel Tower";
-		if (subAnswerType==4) return "That's " + convertRange(kmrange,2.9) + " the height of Mount Olympus";
-		if (subAnswerType==5) return "That's " + convertRange(kmrange,0.82) + " the height of the Burj Khalifa in Dubai"; 
-	}
-	if (answerType==2) { //Answers relating in units
-		var subAnswerType = randomNum(1,6);
-		if (subAnswerType==1) return "That's as much as " + rangeInFunnyUnits(kmrange,0.0012192) + " two-by-fours placed next to each other";
-		if (subAnswerType==2) return "That's as much as " + rangeInFunnyUnits(kmrange,0.07) + " pythons placed head to tail";
-		if (subAnswerType==3) return "That's as much as " + rangeInFunnyUnits(kmrange,0.046) + " motorcycle jumps by Evel Knievel"; 
-		if (subAnswerType==4) return "That's as much as " + rangeInFunnyUnits(kmrange,0.11) + " of the world longest baguettes";
-		if (subAnswerType==5) return "That's as much as " + rangeInFunnyUnits(kmrange,0.02) + " tall men standing on each other's shoulders";
-		if (subAnswerType==6) return "That's as much as " + rangeInFunnyUnits(kmrange,0.0091) + " kangaroo hops in a row";
-	}
-	if (answerType==3) { //Answers relating to speed/time
-		var subAnswerType = randomNum(1,8);
-		if (subAnswerType==1) return "That's how far a man being chased by a bear runs in " + rangeInTimeMins(kmrange,20) + " minutes";
-		if (subAnswerType==2) return "That's how far a Porsche 944 drives in " + rangeInTimeMins(kmrange,200) + " minutes";
-		if (subAnswerType==3) return "That's just " + rangeInTimeSecs(kmrange,1224) + " seconds at the speed of sound";
-		if (subAnswerType==4) return "That's just " + rangeInTimeSecs(kmrange,2448) + " seconds at the speed of love";
-		if (subAnswerType==5) return "That's how far an F16 flies in " + rangeInTimeSecs(kmrange,3060) + " seconds";
-		if (subAnswerType==6) return "That's how far a cheetah runs in " + rangeInTimeMins(kmrange,120) + " minutes";
-		if (subAnswerType==7) return "That's how far a pigeon flies in " + rangeInTimeMins(kmrange,80) + " minutes";
-		if (subAnswerType==8) return "That's how far Usain Bolt sprints in " + rangeInTimeMins(kmrange,36) + " minutes";
-	}
-}
-
 function inputSelect()
 {
 	document.getElementById('answerinkm').className = 'hidden';
 	document.getElementById('answerinfunny').className = 'hidden';
-	document.getElementById('andnow').className = 'hidden';
-	document.getElementById('sources').className = 'hidden';
+	document.getElementById('chart').className = 'hidden';
+	document.getElementById('variableChoiceDiv').className = 'hidden';
 			
 	if ((advForm.advFreq.value!="")&&(advForm.advPower.value!="")&&(advForm.advTxDb.value!="")&&(advForm.advRxDb.value!="")&&(advForm.gainAdj.value!="")&&(advForm.advSensitivity.value!="")) {
 		document.getElementById('theButton').classList.add('button'); 
@@ -126,19 +212,6 @@ function convertRange(kmrange, maxrange)
 	if (kmrange>maxrange) return superRound(kmrange/maxrange,2) + " times";
 }
 
-function rangeInFunnyUnits(kmrange, unitInKm)
-{
-	return superRound(kmrange/unitInKm,2);
-}
-
-function rangeInTimeMins(kmrange, kmPerHour)
-{
-	return superRound(kmrange/(kmPerHour/60),2);
-}
-function rangeInTimeSecs(kmrange, kmPerHour)
-{
-	return superRound(kmrange/(kmPerHour/60/60),2);
-}
 function superRound(value, exp) {
   if (typeof exp === 'undefined' || +exp === 0)
     return Math.round(value);
