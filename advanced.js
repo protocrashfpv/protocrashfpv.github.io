@@ -79,7 +79,25 @@ function variableSelect() {
 		}
 		chart(); 
 	}
-	else {
+	else if (choice == 'Rx Sensitivity') {
+	//Creating array of data points
+		rangePoints=[];
+		xAxisLabels=[];
+
+		chartTitle = 'Rx Sensitivity/Range';
+		xAxisTitle = 'Sensitivity (dB)'
+		
+		for (i=100; i>69; i=i-5) {
+			advSensitivity=-i;
+			var txpowerdb = 10*log10(advPower);
+			var fsl = -advSensitivity+advTxDb+txpowerdb+advRxDb+gainAdj;	
+			var kmrange = superRound(Math.pow(10,((fsl-20*log10(advFreq)-32.45)/20)),2);
+			rangePoints[rangePoints.length] = kmrange;
+			xAxisLabels[xAxisLabels.length] = i;
+		}
+		chart(); 
+	}	
+	else if (choice == 'Frequency') {
 		
 		chartTitle = 'Frequency/Range';
 		xAxisTitle = 'Frequency (mHz)';
