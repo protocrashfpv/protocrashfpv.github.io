@@ -73,19 +73,18 @@ function polarityMismatchLoss()
 	var txPolarity = "circular";
 	var rxPolarity = "circular";
 	
-	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Rubber ducky") txPolarity="linear";
-	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Moxon") txPolarity="linear";
-	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Inverted V") rxPolarity="linear";
-	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text=="Diamond SRH771") rxPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Rubber ducky") > -1) txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Moxon") > -1) txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Inverted V") > -1) txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Diamond SRH771") > -1) txPolarity="linear";
 	
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Rubber ducky") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (8dbi linear)") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (11dbi linear)") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Patch (14dbi linear)") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Yagi (16.5dbi)") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="1/2wave dipole") rxPolarity="linear";
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text=="Turnstyle") rxPolarity="linear";
-	
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Rubber ducky") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (8dbi linear)") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (11dbi linear)") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (14dbi linear)") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Yagi") > -1) rxPolarity="linear";		
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("1/2wave dipole") > -1) rxPolarity="linear";		
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Turnstyle)") > -1) rxPolarity="linear";		
 	
 	if (txPolarity==rxPolarity) return 0; else return -3;
 }
