@@ -230,6 +230,9 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 		margin-right:auto;
 		width:300px;
 	}
+	.images{
+		margin-left:0px;
+	}
 }
 
 #qmark {
