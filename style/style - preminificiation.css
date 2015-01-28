@@ -275,6 +275,12 @@ margin-left: auto;
   animation-fill-mode: forwards;  
 }
 
+@media screen and (max-width: 1024px) {
+.positionbutton{
+ width: 100%;
+ }
+}
+
 @-webkit-keyframes buttonAppear
 {
 	100% {
