@@ -31,25 +31,25 @@
 	<div id="qmark" onclick="infoClick()"></div>
 </div>
 
-<div style="clear: right" class="centreselectors">
+<div style="clear: right" class="centreselectorsadv">
 	<div class="choosesetup">
-		Pick your setup
+		<h1>Pick your setup</h1>
 		<div class="choosesetupmode">
 		 (or back to 
 		 <a href="./index.html" class="underline" title="Return to normal mode">normal mode</a>
-		 )
+		 )<br>
 		</div>
 	</div>
 	
 	<div class="inputcentre">
 		<form name="advForm" id="myForm">
-			<input title="Choose your frequency, in MHz (e.g. 2400 for 2.4GHz)" type="number" name="advFreq" placeholder="Frequency (MHz)" onchange="inputSelect()"> &nbsp&nbsp
-			<input title="Choose your power, in mW (e.g. 1000 for 1W)" type="number" name="advPower" placeholder="Power (mw)" onchange="inputSelect()"> &nbsp&nbsp
-			<input title="Choose your transmitter antenna gain, in dBi (e.g. 1.25 for a cloverleaf)" type="number" step="0.1" name="advTxDb" placeholder="Tx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
-			<br>
-			<input title="Choose your receiver antenna gain, in dBi (e.g. 10 for a crosshair)"type="number" step="0.1" name="advRxDb" placeholder="Rx Gain (dB)" onchange="inputSelect()"> &nbsp&nbsp
-			<input title="Add an adjustment to the overall gain, e.g. -3 for polarity mismatch (in most cases this should just be 0)" type="number" step="0.1" name="gainAdj" placeholder="Gain adjustment (dB)" onchange="inputSelect()"> &nbsp&nbsp
-			<input title="Choose your receiver's sensitivity, in dB. This should be a negative number (if you don't know a good assumption is -85)" type="number" name="advSensitivity" placeholder="Rx sensitivity (eg -85)" onchange="inputSelect()"> &nbsp&nbsp
+			<input title="Choose your frequency, in MHz (e.g. 2400 for 2.4GHz)" type="number" name="advFreq" placeholder="Frequency (MHz)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp</span>
+			<input title="Choose your power, in mW (e.g. 1000 for 1W)" type="number" name="advPower" placeholder="Power (mw)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp</span>
+			<input title="Choose your transmitter antenna gain, in dBi (e.g. 1.25 for a cloverleaf)" type="number" step="0.1" name="advTxDb" placeholder="Tx Gain (dB)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp
+			<br></span>
+			<input title="Choose your receiver antenna gain, in dBi (e.g. 10 for a crosshair)"type="number" step="0.1" name="advRxDb" placeholder="Rx Gain (dB)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp</span>
+			<input title="Add an adjustment to the overall gain, e.g. -3 for polarity mismatch (in most cases this should just be 0)" type="number" step="0.1" name="gainAdj" placeholder="Gain adjustment (dB)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp</span>
+			<input title="Choose your receiver's sensitivity, in dB. This should be a negative number (if you don't know a good assumption is -85)" type="number" name="advSensitivity" placeholder="Rx sensitivity (eg -85)" onchange="inputSelect()"> <span class="gaps">&nbsp&nbsp</span>
 		</form>
 	</div>
 </div>

@@ -15,38 +15,59 @@ body{
 }
 
 input {
-	padding: 15px;
+	padding: 20px;
 	background-color: #1c4761;
 	margin: 0 0 10px 0;
 	text-align:center;
 	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
 	color: #fff; /*Font color*/
-	font-size: 1em;
-
+	font-size: 1.5em;
 }
 input:focus { 
     background-color: #1e90ff; 
 } 
 
 form {
-	width:770px;
+	width:1024px;
 	margin-left:auto;
 	margin-right:auto;
 }
 
+
+
 .centrevariableselect {
   margin-top: 2%;
     margin-bottom: 2%;
-  width: 300px ; /*Change this to make it responsive*/
+  width: 80% ; /*Change this to make it responsive*/
   margin-left: auto ;
   margin-right: auto ;
 }
 
 .inputcentre {
-
-width:800px;
+width:80%;
  margin-left: auto ;
   margin-right: auto ;
+}
+
+@media screen and (max-width: 1024px) {
+form {
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+input {
+width:100%;
+padding: 5%;
+font-size: 2em;
+color: #fff; /*Font color*/
+}
+.inputcentre {
+width:100%;
+}
+.gaps{
+display:none;
+}
+
 }
 
 .sharelink {
@@ -171,8 +192,15 @@ option {
 
 select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 
-.centreselectors{
+.centreselectorsadv{
   margin-top: 2%;
+  width: 100% ; /*Change this to make it responsive*/
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.centreselectors{
+   margin-top: 2%;
   width: 1208px ; /*Change this to make it responsive*/
   margin-left: auto ;
   margin-right: auto ;
