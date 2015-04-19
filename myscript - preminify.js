@@ -73,12 +73,14 @@ function polarityMismatchLoss()
 	var txPolarity = "circular";
 	var rxPolarity = "circular";
 	
-	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Rubber ducky") > -1) txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Rubber ducky (1db)") > -1) txPolarity="linear";
+	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Rubber ducky (2db)") > -1) txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Moxon") > -1) txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Inverted V") > -1) txPolarity="linear";
 	if (document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text.indexOf("Diamond SRH771") > -1) txPolarity="linear";
 	
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Rubber ducky") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Rubber ducky (1db)") > -1) rxPolarity="linear";
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Rubber ducky (2db)") > -1) rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (8dbi linear)") > -1) rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (11dbi linear)") > -1) rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (14dbi linear)") > -1) rxPolarity="linear";
