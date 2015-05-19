@@ -58,11 +58,6 @@ function infoClick()
   win.focus();	
 }
 
-function infoClickMob()
-{
-  window.location="info.html";
-}
-
 function twitterMouseOn()
 {
 	document.getElementById('tweetlink').innerHTML = "Share &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp range";
