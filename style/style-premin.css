@@ -272,15 +272,15 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 	#qmark {
 		display: none;
 	}
-	#qmarkmob {
+#qmarkmob {
 /*display: absolute;*/
  width: 31px;
  height:31px;
  background-image: url('../images/qmark.png');
 margin-right: 3% ;
 margin-left: auto;
-	}
-	#qmarkmob:hover {
+}
+#qmarkmob:hover {
  background-image: url('../images/qmark-selected.png');
 }
 }
