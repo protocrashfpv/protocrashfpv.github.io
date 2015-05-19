@@ -273,11 +273,16 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
 		display: none;
 	}
 	#qmarkmob {
-		text-align:right;
-	margin-right: 5%;
-	font-weight:bold;
-	font-size: 1.5em;
+/*display: absolute;*/
+ width: 31px;
+ height:31px;
+ background-image: url('../images/qmark.png');
+margin-right: 3% ;
+margin-left: auto;
 	}
+	#qmarkmob:hover {
+ background-image: url('../images/qmark-selected.png');
+}
 }
 
 @media screen and (min-width: 1025px) {
