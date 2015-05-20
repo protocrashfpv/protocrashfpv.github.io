@@ -55,6 +55,14 @@ color: #9CB7DE;
 text-align:center;
 }
 
+#back {
+/*display: absolute;*/
+text-align: right;
+margin-right:3%;
+margin-top:1%;
+color: #FFFFFF;
+}
+
 .antennaimage{
     border-radius: 25px;
     border: 2px solid #9CB7DE;
