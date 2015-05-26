@@ -92,7 +92,7 @@ function polarityMismatchLoss()
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Patch (14dbi linear)") > -1) rxPolarity="linear";
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Yagi") > -1) rxPolarity="linear";		
 	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("1/2wave dipole") > -1) rxPolarity="linear";		
-	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Turnstyle)") > -1) rxPolarity="linear";		
+	if (document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text.indexOf("Turnstile)") > -1) rxPolarity="linear";		
 	
 	if (txPolarity==rxPolarity) return 0; else return -3;
 }
