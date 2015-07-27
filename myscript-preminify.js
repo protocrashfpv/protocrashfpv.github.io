@@ -18,17 +18,29 @@
 		
 		document.getElementById('answerinkm').className = 'answerkm';
 		document.getElementById('answerinfunny').className = 'answerfunny';
-		document.getElementById('andnow').className = 'andnow';
-		document.getElementById('sources').className = 'sources';
 		
+		if (whatadstoshow()==0) {
+			document.getElementById('sources').className = 'sources';
+			document.getElementById('andnow').className = 'andnow';	
+		}
+		if (whatadstoshow()==1) {
+			document.getElementById('donate').className = 'donate';
+			document.getElementById('donatetext').className = 'andnow';	
+		}
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
-		
-		_kmq.push(['record', 'LetsFlyButton', {'Settings':galabel}]);
 	}
+}
+
+function whatadstoshow()
+{
+	var today = new Date();
+	if (isOdd(today.getDate())) return 1; else return 0;
+	//0 is the guide
+	//1 is donate
 }
 
 function dropSelect()
@@ -36,7 +48,9 @@ function dropSelect()
 	document.getElementById('answerinkm').className = 'hidden';
 	document.getElementById('answerinfunny').className = 'hidden';
 	document.getElementById('andnow').className = 'hidden';
+	document.getElementById('donatetext').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
+	document.getElementById('donate').className = 'hidden';
 	
 	
 	var frequency = document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value;
@@ -61,16 +75,6 @@ function infoClick()
 function infoClickMob()
 {
   window.location="info.html";
-}
-
-function twitterMouseOn()
-{
-	document.getElementById('tweetlink').innerHTML = "Share &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp range";
-}
-
-function twitterMouseOut()
-{
-	document.getElementById('tweetlink').innerHTML = "Share your range";
 }
 
 function polarityMismatchLoss()
@@ -180,19 +184,20 @@ function superRound(value, exp) {
   return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
 }
 
+function isOdd(num) {
+	return num % 2;
+}
+
 function labClick()
 {
 ga('send', 'event', 'lablink', 'click');
-_kmq.push(['record', 'Lablink']);
 }
 
 function guideClick()
 {
 ga('send', 'event', 'guidelink', 'click');
-_kmq.push(['record', 'Guidelink',]);
 }
 function twitterClick()
 {
 ga('send', 'event', 'tweet', 'click');
-_kmq.push(['record', 'Twitterlink']);
 }
