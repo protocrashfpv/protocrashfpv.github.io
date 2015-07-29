@@ -201,3 +201,7 @@ function twitterClick()
 {
 ga('send', 'event', 'tweet', 'click');
 }
+function donateClick()
+{
+ga('send', 'event', 'donate', 'click');
+}
