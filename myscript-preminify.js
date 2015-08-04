@@ -38,7 +38,7 @@
 function whatadstoshow()
 {
 	var today = new Date();
-	if (isOdd(today.getDate())) return 1; else return 0;
+	if (isOdd(today.getDate())) return 0; else return 0;
 	//0 is the guide
 	//1 is donate
 }
