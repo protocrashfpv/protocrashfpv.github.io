@@ -27,6 +27,10 @@
 			document.getElementById('donate').className = 'donate';
 			document.getElementById('donatetext').className = 'andnow';	
 		}
+		if (whatadstoshow()==2) {
+			document.getElementById('adverts').className = 'sources';
+			document.getElementById('andnow').className = 'andnow';	
+		}		
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
@@ -38,9 +42,10 @@
 function whatadstoshow()
 {
 	var today = new Date();
-	if (isOdd(today.getDate())) return 0; else return 0;
-	//0 is the guide
+	if (isOdd(today.getDate())) return 2; else return 2;
+	//0 is the guide and lab
 	//1 is donate
+	//2 is the guide and angel
 }
 
 function dropSelect()
@@ -51,6 +56,7 @@ function dropSelect()
 	document.getElementById('donatetext').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
 	document.getElementById('donate').className = 'hidden';
+	document.getElementById('adverts').className = 'hidden';
 	
 	
 	var frequency = document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value;
@@ -204,4 +210,8 @@ ga('send', 'event', 'tweet', 'click');
 function donateClick()
 {
 ga('send', 'event', 'donate', 'click');
+}
+function angelClick()
+{
+ga('send', 'event', 'angellink', 'click');
 }
