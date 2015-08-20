@@ -31,6 +31,10 @@
 			document.getElementById('adverts').className = 'sources';
 			document.getElementById('andnow').className = 'andnow';	
 		}		
+		if (whatadstoshow()==3) {
+			document.getElementById('adverts2').className = 'sources';
+			document.getElementById('andnow').className = 'andnow';	
+		}	
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		
@@ -42,10 +46,11 @@
 function whatadstoshow()
 {
 	var today = new Date();
-	if (isOdd(today.getDate())) return 2; else return 2;
+	if (isOdd(today.getDate())) return 2; else return 3;
 	//0 is the guide and lab
 	//1 is donate
 	//2 is the guide and angel
+	//3 is the guide and angel with the "must have" text
 }
 
 function dropSelect()
@@ -57,6 +62,7 @@ function dropSelect()
 	document.getElementById('sources').className = 'hidden';
 	document.getElementById('donate').className = 'hidden';
 	document.getElementById('adverts').className = 'hidden';
+	document.getElementById('adverts2').className = 'hidden';
 	
 	
 	var frequency = document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value;
