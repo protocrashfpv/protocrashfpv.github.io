@@ -233,12 +233,12 @@ select::-ms-expand { display: none; } /*something to fix dropdowns in IE*/
   width: 650px ; /*Change this to make it responsive*/
   margin-left: auto ;
   margin-right: auto ;
-
   -webkit-animation: fadeIn 5s;
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 5s;
   animation-fill-mode: forwards;  
 }
+
 
 /* Chrome, Safari, Opera */
 .images{
