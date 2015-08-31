@@ -367,6 +367,8 @@ margin-left: auto;
 	font-size: 1em;
 	text-align:center;
 	margin-top: 4%;
+			opacity:1;
+		filter:alpha(opacity=1); /* For IE8 and earlier */;
   -webkit-animation: fadeIn 8s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 8s;
@@ -378,6 +380,8 @@ margin-left: auto;
 	font-size: 3em;
 	text-align:center;
 	margin-top: 2%;
+			opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
   -webkit-animation: fadeIn 1s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 1s;
@@ -389,6 +393,8 @@ margin-left: auto;
 	font-size: 3em;
 	text-align:center;
 	margin-top: 8%;
+			opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
   -webkit-animation: fadeIn 1s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 1s;
@@ -400,6 +406,9 @@ font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,s
 	font-size: 1.5em;
 	text-align:center;
 	margin-top: 4%;
+	
+		opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */;
   -webkit-animation: fadeIn 3s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 3s;
@@ -408,16 +417,22 @@ font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,s
 
 @-webkit-keyframes fadeIn
 {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	100% {
+
+		opacity:1.0;
+		filter:alpha(opacity=100); /* For IE8 and earlier */;
+	}
 
 }
 
 /* Standard syntax */
 @keyframes fadeIn
 {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+	100% {
+
+		opacity:1.0;
+		filter:alpha(opacity=100); /* For IE8 and earlier */;
+	}
 }
 
 .hidden2 {
