@@ -367,8 +367,8 @@ margin-left: auto;
 	font-size: 1em;
 	text-align:center;
 	margin-top: 4%;
-			opacity:0;
-		filter:alpha(opacity=0); /* For IE8 and earlier */;
+			opacity:1;
+		filter:alpha(opacity=1); /* For IE8 and earlier */;
   -webkit-animation: fadeIn 8s; /* Chrome, Safari, Opera */
   -webkit-animation-fill-mode: forwards;  
   animation: fadeIn 8s;
