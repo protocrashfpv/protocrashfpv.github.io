@@ -494,7 +494,14 @@ margin-left: auto ;
 	  background-image: url('../images/button-selected.png');	
   }
 
-
+.sistersite {
+	font-family: "Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,sans-serif;
+	color: #FFFFFF	; /*Font color*/
+	font-size: 0.8em;
+	text-align:center;
+	margin-top: 4%;
+	opacity:0.6;
+}
   
 @-webkit-keyframes letsFlyOnHover
 {
