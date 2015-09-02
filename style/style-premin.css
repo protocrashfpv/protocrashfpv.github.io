@@ -338,6 +338,7 @@ margin-left: auto;
 @media screen and (max-width: 1024px) {
 .positionbutton{
  width: 100%;
+   margin-top: 20em;
  }
 }
 
@@ -501,6 +502,7 @@ margin-left: auto ;
 	text-align:center;
 	margin-top: 4%;
 	opacity:0.6;
+	height:10px;
 }
   
 @-webkit-keyframes letsFlyOnHover
