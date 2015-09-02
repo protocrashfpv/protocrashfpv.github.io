@@ -37,6 +37,7 @@
 		}	
 		
 		document.getElementById('buttonHolder').className = 'hidden';
+		document.getElementById('sistersite').className = 'hidden';
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
@@ -74,6 +75,8 @@ function dropSelect()
 		document.getElementById('theButton').classList.add('button'); 
 		document.getElementById('buttonHolder').classList.add('positionbutton');	
 		document.getElementById('buttonHolder').classList.remove('hidden');	
+		document.getElementById('sistersite').className = 'sistersite';
+
 		
 	}	
 }
