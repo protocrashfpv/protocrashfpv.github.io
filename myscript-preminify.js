@@ -19,19 +19,20 @@
 		document.getElementById('answerinkm').className = 'answerkm';
 		document.getElementById('answerinfunny').className = 'answerfunny';
 		
-		if (whatadstoshow()==0) {
+		var whattoshownow = whatadstoshow();
+		if (whattoshownow==0) {
 			document.getElementById('sources').className = 'sources';
 			document.getElementById('andnow').className = 'andnow';	
 		}
-		if (whatadstoshow()==1) {
+		if (whattoshownow==1) {
 			document.getElementById('donate').className = 'donate';
 			document.getElementById('donatetext').className = 'andnow';	
 		}
-		if (whatadstoshow()==2) {
+		if (whattoshownow==2) {
 			document.getElementById('adverts').className = 'sources';
 			document.getElementById('andnow').className = 'andnow';	
 		}		
-		if (whatadstoshow()==3) {
+		if (whattoshownow==3) {
 			document.getElementById('adverts2').className = 'sources';
 			document.getElementById('andnow').className = 'andnow';	
 		}	
@@ -46,12 +47,18 @@
 
 function whatadstoshow()
 {
-	var today = new Date();
-	if (isOdd(today.getDate())) return 0; else return 0;
+	//var today = new Date();
+	
+	//if (isOdd(today.getDate())) return 0; else return 1;
+	var randomnum = Math.floor((Math.random() * 10) + 1);
+	console.log(randomnum);
+	if (randomnum>6) return 2;
+	if (randomnum<4) return 3; else return 0;
+	
 	//0 is the guide and lab
 	//1 is donate
 	//2 is the guide and angel
-	//3 is the guide and angel with the "must have" text
+	//3 is the guide and quiz
 }
 
 function dropSelect()
@@ -208,9 +215,17 @@ function labClick()
 ga('send', 'event', 'lablink', 'click');
 }
 
+function guideAlsoByClick()
+{
+ga('send', 'event', 'guidealsobylink', 'click');
+}
 function guideClick()
 {
 ga('send', 'event', 'guidelink', 'click');
+}
+function quizClick()
+{
+ga('send', 'event', 'quizlink', 'click');
 }
 function twitterClick()
 {
