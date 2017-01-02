@@ -51,8 +51,7 @@ function whatadstoshow()
 	
 	//if (isOdd(today.getDate())) return 0; else return 1;
 	var randomnum = Math.floor((Math.random() * 10) + 1);
-	console.log(randomnum);
-	if (randomnum<4) return 3; else return 0;
+	if (randomnum<4) return 3; else return 2;
 	
 	//0 is the guide and lab
 	//1 is donate
