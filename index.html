@@ -30,7 +30,15 @@ var counter=0;
 </script>
 <link rel="shortcut icon" href="images/smallicon.ico">
 </head>
-<body>
+<body onload="parseparams()">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=824996377595695";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <span class="bg" style="background-image: url(images/background.jpg);"></span>
 <div style="text-align:center" class="placeheader">
 	<div id="qmark" onclick="infoClick()"></div>
@@ -183,6 +191,13 @@ The definitive FPV range calculator
 <div id="answerinfunny" class="hidden"><!------class="answerfunny">---->
 The definitive FPV range calculator
 </div>
+<!--
+<div id="fbbutton" class="hidden" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true">
+<a id="fblink" class="fb-xfbml-parse-ignore" target="_blank">Share</a>
+</div> <!-- class="fb-share-button" -->
+
+
+
 <div id="andnow" class="hidden"> <!---class="andnow">--->
 ...and now, to read up on how to reach your max range safely...
 </div>

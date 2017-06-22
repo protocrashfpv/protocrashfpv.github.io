@@ -1,4 +1,47 @@
-﻿function buttonClick()
+﻿function parseparams()
+{
+	var theurl = window.location.href;
+	
+	var frequencyList = document.getElementById('freqChoice');
+	var freqParam = getParameterByName('freq',theurl);
+	console.log(freqParam);
+    if (freqParam!=null) {
+		frequencyList.value = freqParam;
+	}
+		
+	var txpowerList = document.getElementById('txPowerChoice');
+	var pwParam=getParameterByName('pw',theurl);
+	console.log(pwParam);
+	if (pwParam!=null) {
+		txpowerList.value = pwParam;
+	}
+	
+	var txantList = document.getElementById('txAntennaChoice');
+	var txantListparam = getParameterByName('tx',theurl);
+	if (txantListparam!=null) {	txantList.options[parseInt(txantListparam)].selected = true;}
+
+	var rxantList = document.getElementById('rxAntennaChoice');
+	var rxantListparam = getParameterByName('rx',theurl);
+	if (rxantListparam!=null) {rxantList.options[parseInt(rxantListparam)].selected = true;	}
+    
+	if ((rxantListparam!=null)&&(txantListparam!=null)&&(pwParam!=null)&&(freqParam!=null)) {
+		dropSelect();
+		document.getElementById("theButton").click();
+	}
+}
+
+function buildShareURL() {
+	var frequency = parseFloat(document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value);
+	var txpower = parseFloat(document.getElementById("txPowerChoice").options[document.getElementById("txPowerChoice").selectedIndex].value);
+	var txantennaindex = document.getElementById("txAntennaChoice").selectedIndex;
+	var rxantennaindex = document.getElementById("rxAntennaChoice").selectedIndex;
+	
+	var uri='https://www.facebook.com/sharer/sharer.php?&p[summary]=TESTSummary&u=' + encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex);
+
+	return encodeURI(uri);
+}
+
+function buttonClick()
 {
 	if (document.getElementById('theButton').classList.contains('button')) {
 		counter = counter+1;
@@ -18,6 +61,7 @@
 		
 		document.getElementById('answerinkm').className = 'answerkm';
 		document.getElementById('answerinfunny').className = 'answerfunny';
+		document.getElementById('fbbutton').className = 'fb-share-button';
 		
 		var whattoshownow = whatadstoshow();
 		if (whattoshownow==0) {
@@ -42,6 +86,10 @@
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
+		
+		document.getElementById("fblink").setAttribute("href",buildShareURL());
+		document.getElementById("fblink").setAttribute("data-href",buildShareURL());
+		
 	}
 }
 
@@ -63,12 +111,14 @@ function dropSelect()
 {
 	document.getElementById('answerinkm').className = 'hidden';
 	document.getElementById('answerinfunny').className = 'hidden';
+	document.getElementById('fbbutton').className = 'hidden';
 	document.getElementById('andnow').className = 'hidden';
 	document.getElementById('donatetext').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
 	document.getElementById('donate').className = 'hidden';
 	document.getElementById('adverts').className = 'hidden';
 	document.getElementById('adverts2').className = 'hidden';
+
 	
 	
 	var frequency = document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value;
@@ -81,8 +131,6 @@ function dropSelect()
 		document.getElementById('buttonHolder').classList.add('positionbutton');	
 		document.getElementById('buttonHolder').classList.remove('hidden');	
 		document.getElementById('sistersite').className = 'sistersite';
-
-		
 	}	
 }
 
@@ -235,4 +283,14 @@ ga('send', 'event', 'donate', 'click');
 function angelClick()
 {
 ga('send', 'event', 'angellink', 'click');
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$*");
+    var regex = new RegExp("[?*]" + name + "(=([^&#]*)|*|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
