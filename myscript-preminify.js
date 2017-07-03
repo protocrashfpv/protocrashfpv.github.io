@@ -35,7 +35,8 @@ function buildShareURL() {
 	var rxantennaindex = document.getElementById("rxAntennaChoice").selectedIndex;
 	var range = document.getElementById("answerinkm").innerHTML;
 	
-	var uri='https://twitter.com/share?hashtags=FPV&text=I\x27ve maxed my FPV range to ' + range + '. Check out my setup at &url=' + encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex) + '&original_referer=' + encodeURI('http://maxmyrange.com') ;
+	//var uri='https://twitter.com/share?hashtags=FPV&text=I\x27ve maxed my FPV range to ' + range + '. Check out my setup at &url=' + encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex) + '&original_referer=' + encodeURI('http://maxmyrange.com') ;
+	var uri=encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex);
 
 	return encodeURI(uri);
 }
