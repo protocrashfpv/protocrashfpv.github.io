@@ -4,14 +4,12 @@
 	
 	var frequencyList = document.getElementById('freqChoice');
 	var freqParam = getParameterByName('freq',theurl);
-	console.log(freqParam);
     if (freqParam!=null) {
 		frequencyList.value = freqParam;
 	}
 		
 	var txpowerList = document.getElementById('txPowerChoice');
 	var pwParam=getParameterByName('pw',theurl);
-	console.log(pwParam);
 	if (pwParam!=null) {
 		txpowerList.value = pwParam;
 	}
@@ -35,8 +33,9 @@ function buildShareURL() {
 	var txpower = parseFloat(document.getElementById("txPowerChoice").options[document.getElementById("txPowerChoice").selectedIndex].value);
 	var txantennaindex = document.getElementById("txAntennaChoice").selectedIndex;
 	var rxantennaindex = document.getElementById("rxAntennaChoice").selectedIndex;
+	var range = document.getElementById("answerinkm").innerHTML;
 	
-	var uri='https://www.facebook.com/sharer/sharer.php?&p[summary]=TESTSummary&u=' + encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex);
+	var uri='https://twitter.com/share?hashtags=FPV&text=I\x27ve maxed my FPV range to ' + range + '. Check out my setup at &url=' + encodeURI('http://maxmyrange.com?freq=' + frequency + '*pw=' + txpower + '*tx=' + txantennaindex + '*rx=' + rxantennaindex) + '&original_referer=' + encodeURI('http://maxmyrange.com') ;
 
 	return encodeURI(uri);
 }
@@ -61,7 +60,7 @@ function buttonClick()
 		
 		document.getElementById('answerinkm').className = 'answerkm';
 		document.getElementById('answerinfunny').className = 'answerfunny';
-		document.getElementById('fbbutton').className = 'fb-share-button';
+		document.getElementById('tweetbutton').className = 'donate';
 		
 		var whattoshownow = whatadstoshow();
 		if (whattoshownow==0) {
@@ -83,12 +82,12 @@ function buttonClick()
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		document.getElementById('sistersite').className = 'hidden';
+		document.getElementById("tweetlink").setAttribute("href",buildShareURL());
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
 		
-		document.getElementById("fblink").setAttribute("href",buildShareURL());
-		document.getElementById("fblink").setAttribute("data-href",buildShareURL());
+		
 		
 	}
 }
@@ -111,7 +110,7 @@ function dropSelect()
 {
 	document.getElementById('answerinkm').className = 'hidden';
 	document.getElementById('answerinfunny').className = 'hidden';
-	document.getElementById('fbbutton').className = 'hidden';
+	document.getElementById('tweetbutton').className = 'hidden';
 	document.getElementById('andnow').className = 'hidden';
 	document.getElementById('donatetext').className = 'hidden';
 	document.getElementById('sources').className = 'hidden';
@@ -260,6 +259,11 @@ function labClick()
 ga('send', 'event', 'lablink', 'click');
 }
 
+function tweetClick()
+{
+ga('send', 'event', 'tweetclick', 'click');
+}
+
 function guideAlsoByClick()
 {
 ga('send', 'event', 'guidealsobylink', 'click');
@@ -286,11 +290,16 @@ ga('send', 'event', 'angellink', 'click');
 }
 
 function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$*");
-    var regex = new RegExp("[?*]" + name + "(=([^&#]*)|*|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
+    var start = url.indexOf(name);
+	if (start<0) return(null); 
+	var tempstring1 = url.substring(start);
+	var end = tempstring1.indexOf('*');
+	var tempresult;
+	if (end >0) tempresult	= tempstring1.substring(1,end); else tempresult	= tempstring1;
+	var newstart = tempresult.indexOf('=');
+	return tempresult.substring(newstart+1);
+}
+
+function getPosition(string, subString, index) {
+   return string.split(subString, index).join(subString).length;
 }
