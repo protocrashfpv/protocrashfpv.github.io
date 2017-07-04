@@ -28,6 +28,7 @@
 	}
 }
 
+
 function buildShareURL() {
 	var frequency = parseFloat(document.getElementById("freqChoice").options[document.getElementById("freqChoice").selectedIndex].value);
 	var txpower = parseFloat(document.getElementById("txPowerChoice").options[document.getElementById("txPowerChoice").selectedIndex].value);
@@ -61,7 +62,7 @@ function buttonClick()
 		
 		document.getElementById('answerinkm').className = 'answerkm';
 		document.getElementById('answerinfunny').className = 'answerfunny';
-		document.getElementById('tweetbutton').className = 'donate';
+		document.getElementById('tweetbutton').className = 'donate, underline2';
 		
 		var whattoshownow = whatadstoshow();
 		if (whattoshownow==0) {
@@ -83,7 +84,7 @@ function buttonClick()
 		
 		document.getElementById('buttonHolder').className = 'hidden';
 		document.getElementById('sistersite').className = 'hidden';
-		document.getElementById("tweetlink").setAttribute("href",buildShareURL());
+		
 		
 		galabel = frequency + ';' + txpower + ';' + document.getElementById("txAntennaChoice").options[document.getElementById("txAntennaChoice").selectedIndex].text + ';' + document.getElementById("rxAntennaChoice").options[document.getElementById("rxAntennaChoice").selectedIndex].text+';'+counter;
 		ga('send', 'event', 'letsfly', 'click', galabel);
@@ -118,6 +119,8 @@ function dropSelect()
 	document.getElementById('donate').className = 'hidden';
 	document.getElementById('adverts').className = 'hidden';
 	document.getElementById('adverts2').className = 'hidden';
+	document.getElementById('tweetbuttonstep2').className = 'hidden';
+	document.getElementById('shareurl').className = 'hidden';
 
 	
 	
@@ -262,8 +265,40 @@ ga('send', 'event', 'lablink', 'click');
 
 function tweetClick()
 {
-ga('send', 'event', 'tweetclick', 'click');
+	document.getElementById('tweetbutton').className = 'hidden';
+	document.getElementById("shareurl").innerHTML = buildShareURL();
+	document.getElementById('tweetbuttonstep2').className = 'shareurl, underline';
+	document.getElementById('shareurl').className = 'shareurl';
 }
+
+function tweetClickstep2()
+{
+  
+    var popup = document.getElementById("myPopup");
+SelectText('shareurl');
+document.execCommand('copy');
+    popup.classList.toggle("show");
+	ga('send', 'event', 'sharelink', 'click');
+}
+
+function SelectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+
 
 function guideAlsoByClick()
 {
